@@ -1,0 +1,150 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: red;
+    /* to avoid scrollbarr below */
+    overflow: hidden;  
+}
+.gameContainer{
+         background-image:url(gamebg.jpg);
+         background-repeat: no-repeat;
+         background-size: 100vw 100vh;
+         width:100% ;
+         height:100vh;
+         /* display: none;  */
+}
+
+.gameOver{
+    /* visibility:hidden; */
+    position: relative;
+    top:63px;
+    font-size: 53px;
+    text-align: center;
+    font-family: sans-serif;
+}
+#scoreCount{
+    color:black;
+    font-weight:bold;
+    position: absolute;
+    right:45px;
+    top: 31px;
+    border: 2px solid black;
+    padding:10px;
+    font-family: sans-serif;
+}
+.dino{
+    background-image: url(deer1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:173px;
+    height:144px;
+    position: absolute;
+    bottom:12px;
+    left:42px;
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(50);
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.fallDeer {
+    animation: fallDown 1s forwards;
+}
+
+.obstacle{
+    width:233px;
+    height:144px;
+    background-image: url(dragon1.png);
+    background-size: cover;
+    position: absolute;
+    bottom:12px;
+    left:62vw;
+}
+.animateDino{
+    animation: dino 0.6s linear;
+
+}
+.obstacleAni{
+    animation: obstacleAni 4s linear infinite;
+}
+@keyframes dino{
+   0%{
+       bottom:0;            
+   }
+   50%{
+       bottom:422px; 
+       /* left:222px;     */
+   }
+   100%{
+     bottom:0;
+   }
+}
+
+@keyframes obstacleAni{
+    0%{
+        left:100vw;
+    }
+    
+    100%{
+      left:-10vw;
+    }
+}
+
+.restartContainer {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+#restartButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background: lightseagreen;
+    border: 2px solid black;
+    border-radius: 22px;
+}
+#startButton {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background: rgb(147, 253, 71);
+    border: 2px solid black;
+    border-radius: 22px;
+}
+#restartButton:hover{
+    background-color:blue;
+}
+#startButton:hover{
+    background-color:red;
+}
+/* 
+.dayNightCycle {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: dayNight 20s linear infinite;
+}
+
+@keyframes dayNight {
+    0% { background-color: #7FDBFF; }
+    50% { background-color: #FFDC00; } 
+    100% { background-color: #7FDBFF; } 
+} */
